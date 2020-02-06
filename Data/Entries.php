@@ -2,18 +2,8 @@
 
 namespace AideTravaux\CEE\Res\Data;
 
-use AideTravaux\CEE\Categorie\Data\Entries as CategorieEntries;
-use AideTravaux\CEE\OS\Data\Entries as BaseEntries;
+use AideTravaux\CEE\OS\Data\Entries as CoreEntries;
 
-abstract class Entries extends BaseEntries
+abstract class Entries extends CoreEntries
 {
-    /**
-     * @property array
-     */
-    const CODES_REGION = CategorieEntries::CODES_REGION;
-
-    /**
-     * @property array
-     */
-    const CATEGORIES_ANAH = CategorieEntries::CATEGORIES_ANAH;
 }
