@@ -64,6 +64,7 @@ Retourne l'éligibilité du projet à l'aide financière sur la base des informa
 
 ## Exemples
 
+```
 use AideTravaux\CEE\Res\Model\DataInterface;
 use AideTravaux\CEE\Res\Model\ConditionInterface;
 use AideTravaux\CEE\Res\Utils\DataFormater;
@@ -235,8 +236,10 @@ class Data implements DataInterface, ConditionInterface
 
 $data = new Data();
 
-var_dump(CEERes::get($data));
-var_dump(DataFormater::get($data));
+CEERes::get($data);
+DataFormater::get($data);
+
+```
 
 ## Base de données
 
