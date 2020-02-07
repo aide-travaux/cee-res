@@ -1,6 +1,6 @@
 {
-    "name": "adrien-rosi/cee-res",
-    "description": "Aide Financière - Certificats d'économies d'énergie - Secteur résidentiel",
+    "name": "aide-travaux/cee-res",
+    "description": "Aide travaux - Certificats d'économies d'énergie - Secteur résidentiel",
     "type": "library",
     "license": "MIT",
     "authors": [
