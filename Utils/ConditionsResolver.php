@@ -24,7 +24,7 @@ abstract class ConditionsResolver
                 'condition' => CEERes::CONDITIONS[1],
                 'value' => null
             ], [
-                'condition' => CEERes::CONDITIONS[1],
+                'condition' => CEERes::CONDITIONS[2],
                 'value' => null
             ], 
             self::getAncienneteCondition($model), 
