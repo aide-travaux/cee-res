@@ -167,7 +167,7 @@ class Data implements DataInterface, ConditionInterface
         return (float) 0;
     }
 
-    public function getNombreAppartements(): int
+    public function getNombreLogements(): int
     {
         return 0;
     }

@@ -3,11 +3,9 @@
 namespace AideTravaux\CEE\Res;
 
 use AideTravaux\CEE\Categorie\Utils\HelperCategorie;
-use AideTravaux\CEE\Categorie\Utils\HelperFractionClassique;
-use AideTravaux\CEE\Categorie\Utils\HelperFractionGrandePrecarite;
-use AideTravaux\CEE\Categorie\Utils\HelperFractionPrecarite;
 use AideTravaux\CEE\Categorie\Utils\HelperPlafondGrandePrecarite;
 use AideTravaux\CEE\Categorie\Utils\HelperPlafondPrecarite;
+use AideTravaux\CEE\Res\Data\Entries;
 use AideTravaux\CEE\Res\Model\DataInterface;
 use AideTravaux\CEE\Res\Model\ConditionInterface;
 use AideTravaux\CEE\Res\Repository\Repository;
@@ -89,10 +87,11 @@ abstract class CEERes
         $base = Repository::getOneOrNull( $model->getCeeCodeTravaux() );
         $base = ($base) ? $base::get($model) : 0;
 
-        return (float) HelperFractionClassique::get(
-            $model->getCategorieCee(),
-            $model->getCodeDepartement()
-        ) * $base;
+        return 
+            ( $model->getCategorieCee() === Entries::CATEGORIES_CEE['categorie_cee_1'] ) 
+            ? (float) $base 
+            : (float) 0
+        ;
     }
 
     /**
@@ -105,10 +104,11 @@ abstract class CEERes
         $base = Repository::getOneOrNull( $model->getCeeCodeTravaux() );
         $base = ($base) ? $base::get($model) : 0;
 
-        return (float) HelperFractionPrecarite::get(
-            $model->getCategorieCee(),
-            $model->getCodeDepartement()
-        ) * $base;
+        return 
+            ( $model->getCategorieCee() === Entries::CATEGORIES_CEE['categorie_cee_2'] ) 
+            ? (float) $base 
+            : (float) 0
+        ;
     }
 
     /**
@@ -121,10 +121,11 @@ abstract class CEERes
         $base = Repository::getOneOrNull( $model->getCeeCodeTravaux() );
         $base = ($base) ? $base::get($model) : 0;
 
-        return (float) HelperFractionGrandePrecarite::get(
-            $model->getCategorieCee(),
-            $model->getCodeDepartement()
-        ) * $base * 2;
+        return 
+            ( $model->getCategorieCee() === Entries::CATEGORIES_CEE['categorie_cee_3'] ) 
+            ? (float) $base * 2
+            : (float) 0
+        ;
     }
 
     /**
